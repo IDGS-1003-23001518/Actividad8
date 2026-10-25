@@ -6,7 +6,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MAIN = ROOT / "main.py"
 
-
 def ejecutar_sistema(pedido):
     return subprocess.run(
         [sys.executable, str(MAIN), json.dumps(pedido)],

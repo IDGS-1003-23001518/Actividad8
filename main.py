@@ -1,7 +1,6 @@
 import json
 import sys
 
-
 def calcular_total(precios):
     """Calcula el total y captura errores de datos."""
     try:
