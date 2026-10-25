@@ -1,0 +1,27 @@
+name: Pruebas de desarrollo
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Ejecutar pruebas de integración
+        run: python -m pytest tests/test_integration.py -v
+
+      - name: Ejecutar pruebas de sistema
+        run: python -m pytest tests/test_system.py -v
