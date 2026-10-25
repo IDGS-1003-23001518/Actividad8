@@ -1,6 +1,5 @@
 from main import procesar_pedido
 
-
 def test_integracion_pedido_valido():
     pedido = [
         {"nombre": "Teclado", "precio": 350},
